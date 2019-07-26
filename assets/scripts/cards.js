@@ -1,13 +1,26 @@
 const card_api_url = "https://deckofcardsapi.com/api/deck/new/draw/?count=2";
 
-let card1code;
-let card1suit;
-let card1image;
-let card1value;
-let card2code;
-let card2suit;
-let card2image;
-let card2value;
+var card1code;
+var card1suit;
+var card1image;
+var card1value;
+var card2code;
+var card2suit;
+var card2image;
+var card2value;
+
+function displayCards() {
+      // Update the DOM
+      document.getElementById("code1").textContent = card1code;
+      document.getElementById("value1").textContent = card1value;
+      document.getElementById("suit1").textContent = card1suit;
+      document.getElementById("cardimg1").src = card1image;
+    
+      document.getElementById("code2").textContent = card2code;
+      document.getElementById("value2").textContent = card2value;
+      document.getElementById("suit2").textContent = card2suit;
+      document.getElementById("cardimg2").src = card2image;
+};
 
 async function getCards() {
   const response = await fetch(card_api_url);
@@ -38,16 +51,10 @@ async function getCards() {
   card2image = data.cards[1].image;
   console.log(card2image);
 
-  // Update the DOM
-  document.getElementById("code1").textContent = code;
-  document.getElementById("value1").textContent = value;
-  document.getElementById("suit1").textContent = suit;
-  document.getElementById("cardimg1").src = image;
+  displayCards();
 
-  document.getElementById("code2").textContent = card2code;
-  document.getElementById("value2").textContent = card2value;
-  document.getElementById("suit2").textContent = card2suit;
-  document.getElementById("cardimg2").src = card2image;
-}
+};
 
 getCards();
+
+
