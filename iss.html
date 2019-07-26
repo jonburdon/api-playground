@@ -20,6 +20,10 @@ async function getISS() {
    console.log(data);
    console.log(data.latitude);
    console.log(data.longitude);
+//    Use Javascript destructuring to take data from array and create separate variables
+    const {latitude, longitude} = data;
+    console.log(latitude);
+    console.log(longitude);
 }
 
 getISS();

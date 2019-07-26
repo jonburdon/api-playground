@@ -8,19 +8,28 @@
 
 <body>
         
-        <script>
+<script>
 
-                const card_api_url = 'https://deckofcardsapi.com/api/deck/new/draw/?count=2';
-                
-                async function getISS() {
-                   const response = await fetch(card_api_url); 
-                   const data = await response.json();
-                   console.log(data);
-                }
-                
-                getISS();
-                
-                </script>  
+        const card_api_url = 'https://deckofcardsapi.com/api/deck/new/draw/?count=2';
+        
+        async function getCards() {
+            const response = await fetch(card_api_url); 
+            let data = await response.json();
+            console.log(data);
+            console.log(data.cards[1]);
+            //    Use Javascript destructuring to take data from first card in array and create separate variables
+            const {code, value} = data.cards[0];
+            console.log(code);
+            console.log(value);
+           
+            
+        }
+        
+        getCards();
+        
+        
+            
+</script>  
 
 </body>
 
