@@ -9,17 +9,37 @@ var card2suit;
 var card2image;
 var card2value;
 
+function updateDisplay(targetId, dataUpdate) {
+    // Update the DOM
+    document.getElementById(targetId).textContent = dataUpdate;
+};
+
+function updateImage(targetId, dataUpdate) {
+    // Update the DOM
+    document.getElementById(targetId).src = dataUpdate;
+};
+
 function displayCards() {
       // Update the DOM
-      document.getElementById("code1").textContent = card1code;
-      document.getElementById("value1").textContent = card1value;
-      document.getElementById("suit1").textContent = card1suit;
-      document.getElementById("cardimg1").src = card1image;
+    //   document.getElementById("code1").textContent = card1code;
+    updateDisplay("code1",card1code);
+    updateDisplay("value1",card1value);
+    updateDisplay("suit1",card1suit);
+    updateImage("cardimg1",card1image);
+
+    updateDisplay("code2",card2code);
+    updateDisplay("value2",card2value);
+    updateDisplay("suit2",card2suit);
+    updateImage("cardimg2",card2image);
+
+    //   document.getElementById("value1").textContent = card1value;
+    //   document.getElementById("suit1").textContent = card1suit;
+    //   document.getElementById("cardimg1").src = card1image;
     
-      document.getElementById("code2").textContent = card2code;
-      document.getElementById("value2").textContent = card2value;
-      document.getElementById("suit2").textContent = card2suit;
-      document.getElementById("cardimg2").src = card2image;
+    //   document.getElementById("code2").textContent = card2code;
+    //   document.getElementById("value2").textContent = card2value;
+    //   document.getElementById("suit2").textContent = card2suit;
+    //   document.getElementById("cardimg2").src = card2image;
 };
 
 async function getCards() {
@@ -45,6 +65,7 @@ console.log("card codes are " + cardCodes);
 
   card1code = data.cards[0].code;
   console.log(card1code);
+
   card1suit = data.cards[0].suit;
   console.log(card1suit);
 
