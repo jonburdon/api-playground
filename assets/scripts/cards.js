@@ -1,4 +1,4 @@
-const card_api_url = "https://deckofcardsapi.com/api/deck/new/draw/?count=2";
+const card_api_url = "https://deckofcardsapi.com/api/deck/new/draw/?count=12";
 
 var card1code;
 var card1suit;
@@ -34,20 +34,35 @@ async function getCards() {
   console.log(suit);
   console.log(image);
 
+//   Create array with card code data
+var cardCodes = [];
+var i;
+for (i=0; i<12; i++) {
+console.log(`For loop ${i}`);
+cardCodes[i] = [data.cards[i].code]
+console.log("card codes are " + cardCodes);
+};
+
   card1code = data.cards[0].code;
   console.log(card1code);
   card1suit = data.cards[0].suit;
   console.log(card1suit);
+
   card1image = data.cards[0].image;
   console.log(card1image);
+
   card1value = data.cards[0].value;
   console.log(card1value);
+
   card2value = data.cards[1].value;
   console.log(card2value);
+
   card2code = data.cards[1].code;
   console.log(card2code);
+
   card2suit = data.cards[1].suit;
   console.log(card2suit);
+
   card2image = data.cards[1].image;
   console.log(card2image);
 
