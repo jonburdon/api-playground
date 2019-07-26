@@ -8,30 +8,23 @@ var card2code;
 var card2suit;
 var card2image;
 var card2value;
+var testImgHtml = "<img src='rainbow.jpg'>";
+var testImgHtml2;
 
 function updateDisplay(targetId, dataUpdate) {
-    // Update the DOM
+    // Update the DOM with text
     document.getElementById(targetId).textContent = dataUpdate;
 };
 
 function updateImage(targetId, dataUpdate) {
-    // Update the DOM
+    // Update the DOM with image src
     document.getElementById(targetId).src = dataUpdate;
 };
 
-function displayCards() {
-      // Update the DOM
-    
-    updateDisplay("code1",card1code);
-    updateDisplay("value1",card1value);
-    updateDisplay("suit1",card1suit);
-    updateImage("cardimg1",card1image);
-
-    updateDisplay("code2",card2code);
-    updateDisplay("value2",card2value);
-    updateDisplay("suit2",card2suit);
-    updateImage("cardimg2",card2image);
+function updateHtml(targetId, dataUpdate) {
+    document.getElementById(targetId).innerHTML = dataUpdate;
 };
+
 
 async function getCards() {
   const response = await fetch(card_api_url);
@@ -80,28 +73,35 @@ console.log(`cardChosen full data = ${cardChosen}`);
 console.log(`cardChosen array 5 = ${cardChosen[5]}`);
 
   card1code = data.cards[0].code;
-  console.log(card1code);
-
   card1suit = data.cards[0].suit;
-  console.log(card1suit);
-
   card1image = data.cards[0].image;
-  console.log(card1image);
-
   card1value = data.cards[0].value;
-  console.log(card1value);
-
   card2value = data.cards[1].value;
-  console.log(card2value);
-
   card2code = data.cards[1].code;
-  console.log(card2code);
-
   card2suit = data.cards[1].suit;
-  console.log(card2suit);
-
   card2image = data.cards[1].image;
-  console.log(card2image);
+
+
+
+function displayCards() {
+    // Update the DOM
+  
+    //Display 2 cards only
+  updateDisplay("code1",card1code);
+  updateDisplay("value1",card1value);
+  updateDisplay("suit1",card1suit);
+  updateImage("cardimg1",card1image);
+
+  updateDisplay("code2",card2code);
+  updateDisplay("value2",card2value);
+  updateDisplay("suit2",card2suit);
+  updateImage("cardimg2",card2image);
+
+  // Display 6 cards
+  testImgHtml = `<img src="${cardChosen[0][1]}" width=50>`;
+  updateHtml("6cards",testImgHtml);
+
+};
 
   displayCards();
 
