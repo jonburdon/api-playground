@@ -25,7 +25,13 @@ function updateHtml(targetId, dataUpdate) {
     document.getElementById(targetId).innerHTML += dataUpdate;
 };
 
-
+// From https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 async function getCards() {
   const response = await fetch(card_api_url);
@@ -149,9 +155,20 @@ function displayCards() {
     updateHtml("12cards",testImgHtml);
     };
 
+    // Shuffle Cards on the 6 and the 12 packs
+    console.log(`6 cards unshuffled = ${cardChosen}`);
+    shuffleArray(cardChosen);
+    console.log(`6 cards shuffled = ${cardChosen}`);
+
+    console.log(`12 cards unshuffled = ${twelveCards}`);
+    shuffleArray(twelveCards);
+    console.log(`12 cards shuffled = ${twelveCards}`);
+
 };
 
   displayCards();
+
+
 
 };
 
