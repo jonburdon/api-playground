@@ -26,6 +26,7 @@ function updateHtml(targetId, dataUpdate) {
 };
 
 
+
 async function getCards() {
   const response = await fetch(card_api_url);
   let data = await response.json();
@@ -73,7 +74,7 @@ console.log(`cardChosen full data = ${cardChosen}`);
 console.log(`cardChosen array 5 = ${cardChosen[5]}`);
 
 
-//Create array of 12 cards, storing code and image data in pairs
+//Create array of 12 cards made of 6 cards used twice, storing code and image data in pairs
 var twelveCards = [["code1value","image1value"],["code2value","image2value"],["code3value","image3value"],["code4value","image4value"],["code5value","image5value"],["code6value","image6value"],
 ["code7value","image7value"],["code8value","image8value"],["code9value","image9value"],["code10value","image10value"],["code11value","image11value"],["code12value","image12value"]];
 var iNested;
@@ -121,7 +122,7 @@ console.log(`cardChosen array 6 = ${twelveCards[5]}`);
 function displayCards() {
     // Update the DOM
   
-    //Display 2 cards only
+    //Display 2 cards only by calling updateDisplay Function
   updateDisplay("code1",card1code);
   updateDisplay("value1",card1value);
   updateDisplay("suit1",card1suit);
@@ -140,8 +141,13 @@ function displayCards() {
     updateHtml("6cards",testImgHtml);
     };
 
-
-
+    // Display 12 cards
+  
+  for (i=0; i<12; i++) {
+    console.log(`For loop for 6 cards${i}`);
+    testImgHtml = `<img src="${twelveCards[i][1]}" width=50>`;
+    updateHtml("12cards",testImgHtml);
+    };
 
 };
 
