@@ -12,7 +12,11 @@
 <script>
     console.log('about to fetch a rainbow');
 
-catchRainbow().catch(error => {
+catchRainbow()
+    .then(response => {
+        console.log('rainbow loaded');
+    })
+    .catch(error => {
         console.log('error!');
         console.error(error);
     });
