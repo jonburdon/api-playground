@@ -8,13 +8,19 @@
 
 <body>
         
+        <script>
 
-
-<script>
-
-
-
-</script>  
+                const card_api_url = 'https://deckofcardsapi.com/api/deck/new/draw/?count=2';
+                
+                async function getISS() {
+                   const response = await fetch(card_api_url); 
+                   const data = await response.json();
+                   console.log(data);
+                }
+                
+                getISS();
+                
+                </script>  
 
 </body>
 
