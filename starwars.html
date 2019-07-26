@@ -12,13 +12,17 @@
 
                 const starwars_api_url = 'https://swapi.co/api/people/1/';
                 
-                async function getISS() {
+                async function getLuke() {
                    const response = await fetch(starwars_api_url); 
                    const data = await response.json();
                    console.log(data);
+                //    Use Javascript destructuring to take data from first card in array and create separate variables
+                const {name} = data
+                console.log("Hi my name is " + name);
+                
                 }
                 
-                getISS();
+                getLuke();
                 
                 </script>  
 
