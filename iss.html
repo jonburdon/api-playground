@@ -8,7 +8,13 @@
 
 <body>
         
+<h1>Where is the ISS?</h1>
 
+<p>
+latitude: <span id="lat"></span><br>
+longitude: <span id="lon"></span>
+
+</p>
 
 <script>
 
@@ -24,6 +30,10 @@ async function getISS() {
     const {latitude, longitude} = data;
     console.log(latitude);
     console.log(longitude);
+
+// Update the DOM
+    document.getElementById('lat').textContent = latitude;
+    document.getElementById('lon').textContent = longitude;
 }
 
 getISS();
