@@ -11,6 +11,7 @@ var card2value;
 var testImgHtml = "<img src='rainbow.jpg'>";
 var testImgHtml2;
 
+
 function updateDisplay(targetId, dataUpdate) {
     // Update the DOM with text
     document.getElementById(targetId).textContent = dataUpdate;
@@ -56,6 +57,7 @@ console.log("card codes are " + cardCodes);
 
 //Create array of 6 cards, storing code and image data in pairs
 var cardChosen = [["code1value","image1value"],["code2value","image2value"],["code3value","image3value"],["code4value","image4value"],["code5value","image5value"],["code6value","image6value"]];
+
 var iNested;
 var ii;
 
@@ -83,6 +85,7 @@ console.log(`cardChosen array 5 = ${cardChosen[5]}`);
 //Create array of 12 cards made of 6 cards used twice, storing code and image data in pairs
 var twelveCards = [["code1value","image1value"],["code2value","image2value"],["code3value","image3value"],["code4value","image4value"],["code5value","image5value"],["code6value","image6value"],
 ["code7value","image7value"],["code8value","image8value"],["code9value","image9value"],["code10value","image10value"],["code11value","image11value"],["code12value","image12value"]];
+
 var iNested;
 var ii;
 
@@ -163,6 +166,20 @@ function displayCards() {
     console.log(`12 cards unshuffled = ${twelveCards}`);
     shuffleArray(twelveCards);
     console.log(`12 cards shuffled = ${twelveCards}`);
+
+    for (i=0; i<6; i++) {
+        console.log(`For loop for 6 cards${i}`);
+        testImgHtml = `<img src="${cardChosen[i][1]}" width=50>`;
+        updateHtml("6cardsshuffled",testImgHtml);
+        };
+    
+        // Display 12 cards
+      
+      for (i=0; i<12; i++) {
+        console.log(`For loop for 6 cards${i}`);
+        testImgHtml = `<img src="${twelveCards[i][1]}" width=50>`;
+        updateHtml("12cardsshuffled",testImgHtml);
+        };
 
 };
 
