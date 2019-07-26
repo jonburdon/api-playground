@@ -8,7 +8,19 @@
 
 <body>
         
+        <script>
 
+                const starwars_api_url = 'https://swapi.co/api/people/1/';
+                
+                async function getISS() {
+                   const response = await fetch(starwars_api_url); 
+                   const data = await response.json();
+                   console.log(data);
+                }
+                
+                getISS();
+                
+                </script>  
 
 </body>
 
