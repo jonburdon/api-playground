@@ -22,7 +22,7 @@ function updateImage(targetId, dataUpdate) {
 };
 
 function updateHtml(targetId, dataUpdate) {
-    document.getElementById(targetId).innerHTML = dataUpdate;
+    document.getElementById(targetId).innerHTML += dataUpdate;
 };
 
 
@@ -98,8 +98,15 @@ function displayCards() {
   updateImage("cardimg2",card2image);
 
   // Display 6 cards
-  testImgHtml = `<img src="${cardChosen[0][1]}" width=50>`;
-  updateHtml("6cards",testImgHtml);
+  
+  for (i=0; i<6; i++) {
+    console.log(`For loop for 6 cards${i}`);
+    testImgHtml = `<img src="${cardChosen[i][1]}" width=50>`;
+    updateHtml("6cards",testImgHtml);
+    };
+
+
+
 
 };
 
