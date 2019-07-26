@@ -94,14 +94,15 @@ for (ii=6; ii<12; ii++) {
     
         for (iNested=6; iNested<12; iNested++) {
             console.log(`Nested Loop ${i} loop ${iNested}`);
-            twelveCards[iNested][0] = [data.cards[iNested].code];
-            twelveCards[iNested][1] = [data.cards[iNested].image];
+            twelveCards[iNested][0] = [twelveCards[iNested-6][0]];
+            twelveCards[iNested][1] = [twelveCards[iNested-6][1]];
         }
 };
 
 //Console log array data for checking above
 console.log(`Twelve Cards = ${twelveCards}`);
 console.log(`cardChosen array 12 = ${twelveCards[11]}`);
+console.log(`cardChosen array 6 = ${twelveCards[5]}`);
 
 
 
