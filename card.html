@@ -8,6 +8,13 @@
 
 <body>
         
+        <h1>What is my card?</h1>
+
+        <p>
+        Card: <span id="value"></span> of <span id="suit"></span><br>
+        Code: <span id="code"></span>
+        
+        </p>
 <script>
 
         const card_api_url = 'https://deckofcardsapi.com/api/deck/new/draw/?count=2';
@@ -18,10 +25,15 @@
             console.log(data);
             console.log(data.cards[1]);
             //    Use Javascript destructuring to take data from first card in array and create separate variables
-            const {code, value} = data.cards[0];
+            const {code, value, suit} = data.cards[0];
             console.log(code);
             console.log(value);
+            console.log(suit);
            
+            // Update the DOM
+    document.getElementById('code').textContent = code;
+    document.getElementById('value').textContent = value;
+    document.getElementById('suit').textContent = suit;
             
         }
         
