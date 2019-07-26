@@ -7,7 +7,12 @@
 </head>
 
 <body>
-        
+        <h1>Who am I?</h1>
+
+        <p>
+                <span id="whoami"></span>
+        </p>    
+
         <script>
 
                 const starwars_api_url = 'https://swapi.co/api/people/1/';
@@ -18,8 +23,10 @@
                    console.log(data);
                 //    Use Javascript destructuring to take data from first card in array and create separate variables
                 const {name, hair_color} = data
-                console.log(`Hi my name is ${name} and I have ${hair_color} hair.`);
+                let whoami = `Hi my name is ${name} and I have ${hair_color} hair.`;
+                console.log(whoami);
                 
+                document.getElementById('whoami').textContent = whoami;
                 }
                 
                 getLuke();
