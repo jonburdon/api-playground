@@ -17,8 +17,8 @@
                    const data = await response.json();
                    console.log(data);
                 //    Use Javascript destructuring to take data from first card in array and create separate variables
-                const {name} = data
-                console.log("Hi my name is " + name);
+                const {name, hair_color} = data
+                console.log(`Hi my name is ${name} and I have ${hair_color} hair.`);
                 
                 }
                 
