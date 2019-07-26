@@ -12,8 +12,8 @@
 
         <p>
         Card: <span id="value"></span> of <span id="suit"></span><br>
-        Code: <span id="code"></span>
-        
+        Code: <span id="code"></span><br>
+        <img id="cardimg">
         </p>
 <script>
 
@@ -25,15 +25,17 @@
             console.log(data);
             console.log(data.cards[1]);
             //    Use Javascript destructuring to take data from first card in array and create separate variables
-            const {code, value, suit} = data.cards[0];
+            const {code, value, suit, image} = data.cards[0];
             console.log(code);
             console.log(value);
             console.log(suit);
+            console.log(image);
            
             // Update the DOM
     document.getElementById('code').textContent = code;
     document.getElementById('value').textContent = value;
     document.getElementById('suit').textContent = suit;
+    document.getElementById('cardimg').src = image;
             
         }
         
