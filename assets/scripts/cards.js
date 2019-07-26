@@ -62,7 +62,7 @@ for (ii=0; ii<6; ii++) {
         }
 };
 
-//Console log array data for checking
+//Console log array data for checking above
 console.log(`cardChosen card1 code = ${cardChosen[0][0]}`);
 console.log(`cardChosen card1 image = ${cardChosen[0][1]}`);
 console.log(`cardChosen card 2 code = ${cardChosen[1][0]}`);
@@ -72,6 +72,40 @@ console.log(`cardChosen full data = ${cardChosen}`);
 
 console.log(`cardChosen array 5 = ${cardChosen[5]}`);
 
+
+//Create array of 12 cards, storing code and image data in pairs
+var twelveCards = [["code1value","image1value"],["code2value","image2value"],["code3value","image3value"],["code4value","image4value"],["code5value","image5value"],["code6value","image6value"],
+["code7value","image7value"],["code8value","image8value"],["code9value","image9value"],["code10value","image10value"],["code11value","image11value"],["code12value","image12value"]];
+var iNested;
+var ii;
+
+for (ii=0; ii<6; ii++) {
+    console.log(`For loop two ${ii}`);
+    
+        for (iNested=0; iNested<6; iNested++) {
+            console.log(`Nested Loop ${i} loop ${iNested}`);
+            twelveCards[iNested][0] = [data.cards[iNested].code];
+            twelveCards[iNested][1] = [data.cards[iNested].image];
+        }
+};
+
+for (ii=6; ii<12; ii++) {
+    console.log(`For loop two ${ii}`);
+    
+        for (iNested=6; iNested<12; iNested++) {
+            console.log(`Nested Loop ${i} loop ${iNested}`);
+            twelveCards[iNested][0] = [data.cards[iNested].code];
+            twelveCards[iNested][1] = [data.cards[iNested].image];
+        }
+};
+
+//Console log array data for checking above
+console.log(`Twelve Cards = ${twelveCards}`);
+console.log(`cardChosen array 12 = ${twelveCards[11]}`);
+
+
+
+// Destructure json for displaying  two single cards
   card1code = data.cards[0].code;
   card1suit = data.cards[0].suit;
   card1image = data.cards[0].image;
