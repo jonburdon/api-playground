@@ -11,6 +11,7 @@ var card2value;
 var testImgHtml = "<img src='rainbow.jpg'>";
 var testImgHtml2;
 
+// ------------------- Functions to access the DOM
 
 function updateDisplay(targetId, dataUpdate) {
     // Update the DOM with text
@@ -26,6 +27,7 @@ function updateHtml(targetId, dataUpdate) {
     document.getElementById(targetId).innerHTML += dataUpdate;
 };
 
+// ------------------- Shuffle an Array
 // From https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -142,7 +144,7 @@ function displayCards() {
   updateDisplay("suit2",card2suit);
   updateImage("cardimg2",card2image);
 
-  // Display 6 cards
+// Display 6 cards
   
   for (i=0; i<6; i++) {
     console.log(`For loop for 6 cards${i}`);
@@ -150,7 +152,7 @@ function displayCards() {
     updateHtml("6cards",testImgHtml);
     };
 
-    // Display 12 cards
+// Display 12 cards
   
   for (i=0; i<12; i++) {
     console.log(`For loop for 6 cards${i}`);
@@ -158,7 +160,7 @@ function displayCards() {
     updateHtml("12cards",testImgHtml);
     };
 
-    // Shuffle Cards on the 6 and the 12 packs
+// Shuffle Cards from the 6 and the 12 packs
     console.log(`6 cards unshuffled = ${cardChosen}`);
     shuffleArray(cardChosen);
     console.log(`6 cards shuffled = ${cardChosen}`);
@@ -173,7 +175,7 @@ function displayCards() {
         updateHtml("6cardsshuffled",testImgHtml);
         };
     
-        // Display 12 cards
+// Display 12 cards
       
       for (i=0; i<12; i++) {
         console.log(`For loop for 6 cards${i}`);
