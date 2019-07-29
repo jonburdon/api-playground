@@ -202,7 +202,10 @@ let cardtoshownext;
 
 for (ii = 0; ii < 12; ii++ ){
     console.log(`new is ${ii}`);
-    setTimeout(function () {
+    console.log(`Game Over is set to ${gameover}`);
+  
+      setTimeout(function () {
+        console.log(`Game Over from Set Timeout is set to ${gameover}`);
         cardcounter ++;
         console.log(`cardcounter is ${cardcounter}`);
         console.log(`cardChosen array ${cardcounter} = ${twelveCards[cardcounter][1]}`);
@@ -211,10 +214,7 @@ for (ii = 0; ii < 12; ii++ ){
         console.log(`next card is ${cardtoshownext}`);
         console.log(`card 1 image is ${card1image}`);
         updateImage("cardimg2",cardtoshownext);
-      
-
-
-        
+    
       if (data.cards[0].code === twelveCards[cardcounter][0][0] )
         {
           console.log("SNAP!!!!!!!!!!!");
@@ -226,8 +226,16 @@ for (ii = 0; ii < 12; ii++ ){
         snap=false;
         console.log(`snap = ${snap}`)
         }
+        console.log(`cardcounter is ${cardcounter} and gameover is ${gameover}`);
+        if (cardcounter === 11 && gameover === false) {
+          updateDisplay("gamestatus", "You didn't win. How is that even possible?");
+        }
 
     }, 1500*ii);
+
+    
+  
+
 
   }
 
@@ -256,6 +264,10 @@ $(document).ready(function() {
     if (snap === true) {
       console.log("You won!");
       gameover = true;
+      console.log(`Game Over is set to ${gameover}`);
+      updateImage("cardimg3",card1image);
+      updateDisplay("gamestatus", "Game Over, you ARE THE WINNER!");
+      updateDisplay("gameplayintro", "Here are the rest of the cards, in case you were interested ...");
     } else 
     {
       console.log("Nope!!! That's not snap.")
