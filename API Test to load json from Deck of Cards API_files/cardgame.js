@@ -10,8 +10,6 @@ var card2image;
 var card2value;
 var testImgHtml = "<img src='rainbow.jpg'>";
 var testImgHtml2;
-var snap = false;
-var gameover = false;
 
 // ------------------- Functions to access the DOM
 
@@ -198,7 +196,7 @@ shuffleArray(twelveCards);
 
 let cardcounter = -1;
 let cardtoshownext;
-
+let snap = false;
 
 for (ii = 0; ii < 12; ii++ ){
     console.log(`new is ${ii}`);
@@ -211,9 +209,6 @@ for (ii = 0; ii < 12; ii++ ){
         console.log(`next card is ${cardtoshownext}`);
         console.log(`card 1 image is ${card1image}`);
         updateImage("cardimg2",cardtoshownext);
-      
-
-
         
       if (data.cards[0].code === twelveCards[cardcounter][0][0] )
         {
@@ -241,25 +236,12 @@ console.log(twelveCards);
 console.log(data.cards[0].code);
 console.log(twelveCards[1][1]);
 
-
-
-
 };
 
 getCards();
 
-
-$(document).ready(function() {
-
-  $("#cardimg2").click(function () {
-    console.log("clicked");
-    if (snap === true) {
-      console.log("You won!");
-      gameover = true;
-    } else 
-    {
-      console.log("Nope!!! That's not snap.")
-    }
-  });
-
+$("#cardimg2").click(function () {
+  console.log("clicked");
 });
+
+
