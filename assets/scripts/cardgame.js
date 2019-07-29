@@ -1,17 +1,17 @@
-const card_api_url = "https://deckofcardsapi.com/api/deck/new/draw/?count=12";
+let card_api_url = "https://deckofcardsapi.com/api/deck/new/draw/?count=12";
 
-var card1code;
-var card1suit;
-var card1image;
-var card1value;
-var card2code;
-var card2suit;
-var card2image;
-var card2value;
-var testImgHtml = "<img src='rainbow.jpg'>";
-var testImgHtml2;
-var snap = false;
-var gameover = false;
+let card1code;
+let card1suit;
+let card1image;
+let card1value;
+let card2code;
+let card2suit;
+let card2image;
+let card2value;
+let testImgHtml = "<img src='rainbow.jpg'>";
+let testImgHtml2;
+let snap = false;
+let gameover = false;
 
 // ------------------- Functions to access the DOM
 
@@ -103,16 +103,6 @@ for (ii=0; ii<12; ii++) {
         }
 };
 
-// for (ii=6; ii<12; ii++) {
-//     console.log(`For loop two ${ii}`);
-    
-//         for (iNested=6; iNested<12; iNested++) {
-//             console.log(`Nested Loop ${i} loop ${iNested}`);
-//             twelveCards[iNested][0] = [twelveCards[iNested-6][0]];
-//             twelveCards[iNested][1] = [twelveCards[iNested-6][1]];
-//         }
-// };
-
 //Console log array data for checking above
 console.log(`Twelve Cards = ${twelveCards}`);
 console.log(`cardChosen array 12 = ${twelveCards[11]}`);
@@ -134,56 +124,8 @@ console.log(`cardChosen array 6 = ${twelveCards[5]}`);
 
 function displayCards() {
     // Update the DOM
-  
-  //Display 2 cards only by calling updateDisplay Function
-//   updateDisplay("code1",card1code);
-//   updateDisplay("value1",card1value);
-//   updateDisplay("suit1",card1suit);
+
   updateImage("cardimg1",card1image);
-
-//   updateDisplay("code2",card2code);
-//   updateDisplay("value2",card2value);
-//   updateDisplay("suit2",card2suit);
-//   updateImage("cardimg2",card2image);
-
-// Display 6 cards
-  
-//   for (i=0; i<6; i++) {
-//     console.log(`For loop for 6 cards${i}`);
-//     testImgHtml = `<img src="${cardChosen[i][1]}" width=50>`;
-//     updateHtml("6cards",testImgHtml);
-//     };
-
-// Display 12 cards
-  
-//   for (i=0; i<12; i++) {
-//     console.log(`For loop for 6 cards${i}`);
-    // testImgHtml = `<img src="${twelveCards[i][1]}" width=50>`;
-    // updateHtml("12cards",testImgHtml);
-    // };
-
-// Shuffle Cards from the 6 and the 12 packs
-    // console.log(`6 cards unshuffled = ${cardChosen}`);
-    // shuffleArray(cardChosen);
-    // console.log(`6 cards shuffled = ${cardChosen}`);
-
-    // console.log(`12 cards unshuffled = ${twelveCards}`);
-    // shuffleArray(twelveCards);
-    // console.log(`12 cards shuffled = ${twelveCards}`);
-
-    // for (i=0; i<6; i++) {
-    //     console.log(`For loop for 6 cards${i}`);
-    //     testImgHtml = `<img src="${cardChosen[i][1]}" width=50>`;
-        // updateHtml("6cardsshuffled",testImgHtml);
-        // };
-    
-// Display 12 cards
-      
-    //   for (i=0; i<12; i++) {
-    //     console.log(`For loop for 6 cards${i}`);
-    //     testImgHtml = `<img src="${twelveCards[i][1]}" width=50>`;
-    //     updateHtml("12cardsshuffled",testImgHtml);
-    //     };
 
 };
 
@@ -233,24 +175,15 @@ for (ii = 0; ii < 12; ii++ ){
 
     }, 1500*ii);
 
-    
-  
-
-
   }
-
 
 }
 
 loopShowingCards();
 
-
 console.log(twelveCards);
 console.log(data.cards[0].code);
 console.log(twelveCards[1][1]);
-
-
-
 
 };
 
