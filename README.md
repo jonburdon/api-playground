@@ -1,6 +1,8 @@
 
 # API Playground
 
+## View on Github Pages https://jonburdon.github.io/api-playground/
+
 ## Project aims
 Display data from various different APIs as a way of demonstrating the technology. Fun and informal project, purely to act as a demonstration.
 
